@@ -122,8 +122,7 @@ kubectl get nodes
 <img width="946" height="423" alt="image" src="https://github.com/user-attachments/assets/04f79f0c-d0c5-4916-b181-f47cab2664e9" />
 
 
-
-
+That's it! You've successfully installed Minikube in local.
 
 
 
