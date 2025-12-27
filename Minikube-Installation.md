@@ -1,14 +1,14 @@
 # Mini Kube Installation for Ubuntu.
 
-# 1. Update System Packages.
+## 1. Update System Packages.
 ```bash
 sudo apt update
 ```
-# 2. Install some basic required packages.
+## 2. Install some basic required packages.
 ```bash
 sudo apt install -y curl wget apt-transport-https
 ```
-# 3. Install Docker.
+## 3. Install Docker.
 ```bash
 sudo apt install -y docker.io
 ```
@@ -31,7 +31,7 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 chmod +x minikube
 sudo mv minikube /usr/local/bin/
 ```
-# 5. Install kubectl
+## 5. Install kubectl
 Download kubectl, which is a Kubernetes command-line tool.
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
