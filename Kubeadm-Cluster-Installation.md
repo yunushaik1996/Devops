@@ -1,11 +1,4 @@
-# Kubeadm (Cluster setup) Installation Guide
-
-## Prerequisites to install cluster setup
-
-- Ubuntu OS
-- sudo privileges
-- Internet access
-- t2.medium instance type or higher
+# Kubeadm Installation
 
 # AWS Setup
 - Ensure that all instances are in the same Security Group.
@@ -153,4 +146,7 @@ Example format:
 kubectl get nodes
 ```
 <img width="453" height="114" alt="image" src="https://github.com/user-attachments/assets/ef7b1ac6-79a7-4452-89eb-19b1ac10bc9d" />
+
+# Note
+- We need 2 Ec2 Servers, Connect SSh and excute the above commands.
 
