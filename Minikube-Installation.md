@@ -66,7 +66,66 @@ minikube stop
 Delete Minikube Cluster
 ```
 
-hat's it! You've successfully installed Minikube on Ubuntu.
+That's it! You've successfully installed Minikube on Ubuntu.
+
+# Mini kube for local
+
+Open Power shell
+```bash
+cd $env:USERPROFILE\Downloads
+```
+## 1. Install Docker
+Download Docker Desktop
+```bash
+https://www.docker.com/products/docker-desktop/
+```
+Install and start Desktop Docker
+
+Verify:
+```bash
+docker --version
+```
+## 2. Install kubectl
+Open Power shell
+```bash
+curl.exe -LO https://dl.k8s.io/release/v1.30.0/bin/windows/amd64/kubectl.exe
+kubectl version --client
+```
+## 3. Install Minikube
+```bash
+curl.exe -LO https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe
+```
+## 4. Rename the file 
+```bash
+Rename-Item minikube-windows-amd64.exe minikube.exe
+```
+## 5. Create Directory
+```bash
+dir minikube*.exe
+```
+```bash
+New-Item -ItemType Directory -Path "C:\Program Files\minikube" -Force
+```
+## 6. Move minikube.exe
+```bash
+Move-Item minikube.exe "C:\Program Files\minikube\"
+```
+## 7. Check the Version
+```bash
+minikube version
+```
+## 8. Start Kubectl 
+```bash
+minikube start --driver=docker
+kubectl get nodes
+```
+<img width="946" height="423" alt="image" src="https://github.com/user-attachments/assets/04f79f0c-d0c5-4916-b181-f47cab2664e9" />
+
+
+
+
+
+
 
 
 
