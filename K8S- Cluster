@@ -1,0 +1,39 @@
+# Kubeadm (Cluster setup) Installation Guide
+
+## Prerequisites to install cluster setup
+
+Ubuntu OS 
+sudo privileges
+Internet access
+t2.medium instance type or higher
+
+# AWS Setup
+Ensure that all instances are in the same Security Group.
+Expose port 6443 in the Security Group to allow worker nodes to join the cluster.
+Expose port 22 in the Security Group to allows SSH access to manage the instance..
+
+## To Setup the instances follow the below steps
+Log in to the AWS Management Console:
+### Step1
+1. Go to the EC2 Dashboard.
+2. Launch the Instance
+3. Give the Description of the instance
+4. select the Image Ubuntu
+5. Instance Type t2 large - t2 medium
+6. Select the key pair
+7. Networking - Select existing security group
+8. Select configuration Storage -- 20gb
+9. launch
+### Note:
+# Allow SSH Traffic (Port 22):
+
+Type: SSH
+Port Range: 22
+Source: 0.0.0.0/0 (Anywhere) or your specific IP
+Allow Kubernetes API Traffic (Port 6443):
+
+Type: Custom TCP
+Port Range: 6443
+Source: 0.0.0.0/0 (Anywhere) or specific IP ranges
+Save the Rules:
+
