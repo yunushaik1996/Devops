@@ -87,3 +87,8 @@ kind create cluster --name yunus-cluster --config kind.yml
 ```
 # To verify
 <img width="669" height="277" alt="image" src="https://github.com/user-attachments/assets/19ec347d-de5b-4ee4-b50a-5f15653f0036" />
+
+# Note
+- In one Ec2 Server will install KIND Cluster
+- Once your docker, Kind and Kubectl install check the versions
+- Create a yml file and excute the yml file and run the yml
