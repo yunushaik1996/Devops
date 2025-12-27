@@ -69,4 +69,16 @@ kind --version
 kubectl version --client --output=yaml
 
 ```
+# kind-config.yml
+```bash
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.33.1
+  - role: worker
+    image: kindest/node:v1.33.1
+  - role: worker
+    image: kindest/node:v1.33.1
+```
 
