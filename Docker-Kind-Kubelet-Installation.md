@@ -69,3 +69,4 @@ kind --version
 kubectl version --client --output=yaml
 
 ```
+
