@@ -13,7 +13,7 @@ else
   echo "Docker is already installed."
 fi
 ```
-# Install Kind (based on architecture)
+# Install Kind 
 ```bash
 if ! command -v kind &>/dev/null; then
   echo "Installing Kind..."
@@ -35,7 +35,7 @@ else
   echo "Kind is already installed."
 fi
 ```
-# Install kubectl (based on architecture)
+# Install kubectl
 ```bash
 if ! command -v kubectl &>/dev/null; then
   echo " Installing kubectl (latest stable version)..."
