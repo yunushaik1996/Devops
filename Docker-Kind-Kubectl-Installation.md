@@ -8,6 +8,7 @@ echo "🚀 Starting installation of Docker, Kind, and kubectl..."
 # ----------------------------
 # 1. Install Docker
 # ----------------------------
+```bash
 if ! command -v docker &>/dev/null; then
   echo "📦 Installing Docker..."
   sudo apt-get update -y
@@ -20,7 +21,7 @@ if ! command -v docker &>/dev/null; then
 else
   echo "✅ Docker is already installed."
 fi
-
+```
 # ----------------------------
 # 2. Install Kind (based on architecture)
 # ----------------------------
