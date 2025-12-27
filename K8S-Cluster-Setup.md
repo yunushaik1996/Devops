@@ -107,3 +107,50 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
+# Execute ONLY on the "Master" Node
+## 1. Initialize the Cluster:
+```bash
+sudo kubeadm init
+```
+## 2. Set Up Local kubeconfig:
+```bash
+mkdir -p "$HOME"/.kube
+sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
+sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
+```
+## 3. Install a Network Plugin (Calico):
+```bash
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+```
+## 4. Generate Join Command:
+```bash
+kubeadm token create --print-join-command
+```
+Copy this generated token for next command.
+
+# Execute on ALL of your Worker Nodes
+## 1. Perform pre-flight checks:
+```bash
+sudo kubeadm reset pre-flight checks
+```
+## 2. Paste the join command you got from the master node and append --v=5 at the end:
+```bash
+sudo kubeadm join <private-ip-of-control-plane>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash> --cri-socket 
+"unix:///run/containerd/containerd.sock" --v=5
+```
+
+Note: When pasting the join command from the master node:
+
+Add sudo at the beginning of the command
+Add --v=5 at the end
+Example format:
+
+### sudo <paste-join-command-here> --v=5
+
+# Verify Cluster Connection
+## On Master Node
+```bash
+kubectl get nodes
+```
+<img width="453" height="114" alt="image" src="https://github.com/user-attachments/assets/ef7b1ac6-79a7-4452-89eb-19b1ac10bc9d" />
+
