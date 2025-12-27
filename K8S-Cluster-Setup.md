@@ -26,12 +26,12 @@ Log in to the AWS Management Console:
 9. launch
 ### Note:
 # Allow SSH Traffic (Port 22):
-- Type: SSH
+### Type: SSH
 - Port Range: 22
 - Source: 0.0.0.0/0 (Anywhere) or your specific IP
 - Allow Kubernetes API Traffic (Port 6443):
 
-- Type: Custom TCP
+### Type: Custom TCP
 - Port Range: 6443
 - Source: 0.0.0.0/0 (Anywhere) or specific IP ranges
 - Save the Rules:
