@@ -81,4 +81,9 @@ nodes:
   - role: worker
     image: kindest/node:v1.33.1
 ```
-
+# To run this yaml 
+```bash
+kind create cluster --name yunus-cluster --config kind.yml
+```
+# To verify
+<img width="669" height="277" alt="image" src="https://github.com/user-attachments/assets/19ec347d-de5b-4ee4-b50a-5f15653f0036" />
