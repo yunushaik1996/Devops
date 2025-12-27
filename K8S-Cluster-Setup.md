@@ -39,7 +39,7 @@ Log in to the AWS Management Console:
   ## Save the Rules:
 
 # Execute on Both "Master" & "Worker" Nodes
-## Disable Swap:
+## 1. Disable Swap:
 - Kubernetes does not work properly with swap enabled because it manages memory itself.
 - This command temporarily disables swap.
 - ⚠️ To make it permanent, swap must also be removed from /etc/fstab.
@@ -48,7 +48,7 @@ Log in to the AWS Management Console:
 ```bash
 sudo swapoff -a
 ```
-## Load Necessary Kernel Modules: Required for Kubernetes networking.
+## 2. Load Necessary Kernel Modules: Required for Kubernetes networking.
 
 ```bash
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -60,7 +60,7 @@ sudo modprobe overlay
 sudo modprobe br_netfilter
 ```
 
-## Set Sysctl Parameters: Helps with networking.
+## 3. Set Sysctl Parameters: Helps with networking.
 
 ```bash
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
@@ -74,7 +74,7 @@ lsmod | grep br_netfilter
 lsmod | grep overlay
 ```
 
-## Install Containerd:
+## 4. Install Containerd:
 
 ```bash
 sudo apt-get update
@@ -93,7 +93,7 @@ containerd config default | sed -e 's/SystemdCgroup = false/SystemdCgroup = true
 sudo systemctl restart containerd
 sudo systemctl status containerd
 ```
-## Install Kubernetes Components:
+## 5. Install Kubernetes Components:
 
 ```bash
 sudo apt-get update
