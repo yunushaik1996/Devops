@@ -13,6 +13,8 @@ else
   echo "Docker is already installed."
 fi
 ```
+## Note:sudo usermod -aG docker "$USER" && newgrp docker
+
 # Install Kind 
 ```bash
 if ! command -v kind &>/dev/null; then
