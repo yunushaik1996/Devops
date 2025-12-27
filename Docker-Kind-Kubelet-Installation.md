@@ -61,12 +61,9 @@ fi
 ```
 # Confirm Versions
 ```bash
-echo
-echo " Installed Versions:"
+
 docker --version
 kind --version
 kubectl version --client --output=yaml
 
-echo
-echo " Docker,
 ```
